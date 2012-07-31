@@ -1,0 +1,1 @@
+@dir C:\bin\*.bat /d /p 
