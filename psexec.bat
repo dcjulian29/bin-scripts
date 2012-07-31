@@ -1,0 +1,1 @@
+@c:\bin\sysinternals\psexec.exe %*

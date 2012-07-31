@@ -1,0 +1,1 @@
+@c:\bin\sysinternals\sigcheck.exe %*

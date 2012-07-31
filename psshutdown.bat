@@ -1,0 +1,1 @@
+@c:\bin\sysinternals\psshutdown.exe %*
