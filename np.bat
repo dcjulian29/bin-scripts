@@ -4,7 +4,7 @@ SETLOCAL
 
 SET PDIR="%ProgramFiles(x86)%\Notepad++\Notepad++.exe"
 
-IF %PDIR% == "\Notepad++\Notepad++.exe" THEN GOTO B32
+IF %PDIR% == "\Notepad++\Notepad++.exe" GOTO B32
 
 GOTO CONT
 
