@@ -12,7 +12,7 @@
 $global:workingDirectory = "D:\Videos\_download"
 $global:dat = $workingDirectory + "\webcasts.dat"
 $global:opmlFile = $workingDirectory + "\webcasts.opml"
-$global:downloadFiles = $false
+$global:downloadFiles = $true
 
 function Get-Hash
 {
@@ -134,7 +134,6 @@ function Get-RssEnclosures
       }
     }
   } 
-  ""
   ""
 }
 
