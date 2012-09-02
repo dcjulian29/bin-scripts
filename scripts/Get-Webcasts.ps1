@@ -12,6 +12,7 @@
 $global:workingDirectory = "D:\Videos\_download"
 $global:dat = $workingDirectory + "\webcasts.dat"
 $global:opmlFile = $workingDirectory + "\webcasts.opml"
+$global:downloadFiles = $false
 
 function Get-Hash
 {
@@ -78,13 +79,14 @@ function Get-RssEnclosures
   $feed = [xml]$client.DownloadString($rssUrl)
   $feedTitle = $feed.rss.channel.title
   
-  "Checking $feedTitle..."
+  ""
+  "Feed: $feedTitle..."
   
   $feed.rss.channel.item | foreach `
   {
     ""
     $itemTitle = $_.title
-    "  Item: $itemTitle"
+    "Item: $itemTitle"
     
     $enclosure = $_.enclosure
     
@@ -99,22 +101,25 @@ function Get-RssEnclosures
       $fileName = $enclosureUrl.Segments[-1]
       $filePath = (join-path $destinationFolder $filename)
       
-      "  Enclosure: $filename"
+      "Enclosure: $filename"
       if (($enclosureHashes | Where-Object { $_.hash -eq $hash } | Count-Object) -eq 0)
       {
         # Do not download a webcast if the file already exists.
         if ((-not (test-path ($filePath))))
         {
-          "  Downloading: $enclosureUrl"
-          C:\bin\webcast-download $enclosure.url $destinationFolder
+          if ($downloadFiles)
+          {
+            C:\bin\webcast-download $enclosure.url $destinationFolder
+          }
         }
         
-        if (test-path ($filePath))
+        if ((-not $downloadFiles) -or (test-path ($filePath)))
         {
           $ob = New-Object PSObject `
-            | Add-Member -MemberType NoteProperty -Name "pubdate" -value $pubdate -PassThru `
+            | Add-Member -MemberType NoteProperty -Name "pubdate" -Value $pubdate -PassThru `
             | Add-Member -MemberType NoteProperty -Name "title" -Value $title -PassThru `
             | Add-Member -Membertype NoteProperty -Name "file" -Value $fileName -PassThru `
+            | Add-Member -Membertype NoteProperty -Name "feed" -Value $feedTitle -PassThru `
             | Add-Member -MemberType NoteProperty -Name "hash" -Value $hash -PassThru
           $newHashes = @()
           if ($enclosureHashes.length -gt 0)
