@@ -1,6 +1,6 @@
 @echo off
 
-REG ADD "HKCU\Environment" /v HOME /d %%USERPROFILE%%
+setx HOME %USERPROFILE%
 
 :: Need to be elevated...
 setx /m _NT_SOURCE_PATH SRV*C:\Temp
