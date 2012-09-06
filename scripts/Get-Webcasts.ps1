@@ -12,6 +12,7 @@
 $global:workingDirectory = "D:\Videos\_download"
 $global:dat = $workingDirectory + "\webcasts.dat"
 $global:opmlFile = $workingDirectory + "\webcasts.opml"
+$global:ignoreFile = $workingDirectory + "\webcasts.ignore"
 $global:downloadFiles = $true
 
 function Get-Hash
@@ -74,6 +75,15 @@ function Get-RssEnclosures
     $enclosureHashes = @()
   }
   
+  if (test-path $ignoreFile)
+  {
+    $ignores = Import-CSV $ignoreFile
+  }
+  else
+  {
+    $ignores = @()
+  }
+
   $client = New-Object Net.WebClient
   
   $feed = [xml]$client.DownloadString($rssUrl)
@@ -87,50 +97,66 @@ function Get-RssEnclosures
     ""
     $itemTitle = $_.title
     "Item: $itemTitle"
-    
-    $enclosure = $_.enclosure
-    
-    if (([string]$enclosure.url).length -gt 0) 
+
+    $ignoreThis = $false
+    $ignores | foreach `
     {
-      # sometimes items have a non-parsable 'EDT' as part of pubdate 
-      $pubdate = [DateTime]::Parse($_.pubdate.Replace("EDT", "-4"))
-      $title = $_.title
-      $prehash = ([string]([DateTime]$pubDate).ToFileTimeUtc()) + $title + $enclosure.url
-      $hash = Get-Hash $prehash
-      $enclosureUrl = new-object Uri($enclosure.url)
-      $fileName = $enclosureUrl.Segments[-1]
-      $filePath = (join-path $destinationFolder $filename)
-      
-      "Enclosure: $filename"
-      if (($enclosureHashes | Where-Object { $_.hash -eq $hash } | Count-Object) -eq 0)
+      if ($feedTitle -eq $_.feed)
       {
-        # Do not download a webcast if the file already exists.
-        if ((-not (test-path ($filePath))))
+        if ($itemTitle -match $_.expression)
         {
-          if ($downloadFiles)
-          {
-            C:\bin\webcast-download $enclosure.url $destinationFolder
-          }
+          "  Ignoring this item..."
+          $ignoreThis = $true
         }
+      }    
+    }
+    
+    if (-not $ignoreThis)
+    {
+      $enclosure = $_.enclosure
+      
+      if (([string]$enclosure.url).length -gt 0) 
+      {
+        # sometimes items have a non-parsable 'EDT' as part of pubdate 
+        $pubdate = [DateTime]::Parse($_.pubdate.Replace("EDT", "-4"))
+        $title = $_.title
+        $prehash = ([string]([DateTime]$pubDate).ToFileTimeUtc()) + $title + $enclosure.url
+        $hash = Get-Hash $prehash
+        $enclosureUrl = new-object Uri($enclosure.url)
+        $fileName = $enclosureUrl.Segments[-1]
+        $filePath = (join-path $destinationFolder $filename)
         
-        if ((-not $downloadFiles) -or (test-path ($filePath)))
+        "Enclosure: $filename"
+        if (($enclosureHashes | Where-Object { $_.hash -eq $hash } | Count-Object) -eq 0)
         {
-          $ob = New-Object PSObject `
-            | Add-Member -MemberType NoteProperty -Name "pubdate" -Value $pubdate -PassThru `
-            | Add-Member -MemberType NoteProperty -Name "title" -Value $title -PassThru `
-            | Add-Member -Membertype NoteProperty -Name "file" -Value $fileName -PassThru `
-            | Add-Member -Membertype NoteProperty -Name "feed" -Value $feedTitle -PassThru `
-            | Add-Member -MemberType NoteProperty -Name "hash" -Value $hash -PassThru
-          $newHashes = @()
-          if ($enclosureHashes.length -gt 0)
+          # Do not download a webcast if the file already exists.
+          if ((-not (test-path ($filePath))))
           {
-            $newHashes += $enclosureHashes | select *
+            if ($downloadFiles)
+            {
+              C:\bin\webcast-download $enclosure.url $destinationFolder
+            }
           }
           
-          $newHashes += $ob | select *
-          $newHashes | Export-CSV $dat -Force
-          $enclosureHashes = $newHashes
-        }        
+          if ((-not $downloadFiles) -or (test-path ($filePath)))
+          {
+            $ob = New-Object PSObject `
+              | Add-Member -MemberType NoteProperty -Name "pubdate" -Value $pubdate -PassThru `
+              | Add-Member -MemberType NoteProperty -Name "title" -Value $title -PassThru `
+              | Add-Member -Membertype NoteProperty -Name "file" -Value $fileName -PassThru `
+              | Add-Member -Membertype NoteProperty -Name "feed" -Value $feedTitle -PassThru `
+              | Add-Member -MemberType NoteProperty -Name "hash" -Value $hash -PassThru
+            $newHashes = @()
+            if ($enclosureHashes.length -gt 0)
+            {
+              $newHashes += $enclosureHashes | select *
+            }
+            
+            $newHashes += $ob | select *
+            $newHashes | Export-CSV $dat -Force
+            $enclosureHashes = $newHashes
+          }        
+        }
       }
     }
   } 
