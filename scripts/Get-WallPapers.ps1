@@ -17,7 +17,14 @@ function Get-RssEnclosures(
       if ((-not (test-path ($fileName))))
       {
         $enclosureUrl.AbsoluteUri
-        $client.DownloadFile($enclosureUrl.AbsoluteUri, $filename)
+        try
+        {
+          $client.DownloadFile($enclosureUrl.AbsoluteUri, $filename)
+        }
+        catch [Exception]
+        {
+          $_.Exception.Message
+        }
       }
     }
   } 
