@@ -1,6 +1,8 @@
 @echo off
+setlocal
+SET CYGWIN=%CYGWIN% nodosfilewarning
 
-c:\bin\development-tools\msysgit\bin\ssh.exe %*
+c:\cygwin\bin\ssh.exe %*
 
 if %ERRORLEVEL% == 0 goto EOF
 

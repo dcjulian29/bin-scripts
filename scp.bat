@@ -1,6 +1,8 @@
 @echo off
+setlocal
+SET CYGWIN=%CYGWIN% nodosfilewarning
 
-c:\bin\development-tools\msysgit\bin\scp.exe %*
+c:\cygwin\bin\scp.exe %*
 
 if %ERRORLEVEL% == 0 goto EOF
 
