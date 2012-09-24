@@ -15,6 +15,8 @@ $global:opmlFile = $workingDirectory + "\webcasts.opml"
 $global:ignoreFile = $workingDirectory + "\webcasts.ignore"
 $global:downloadFiles = $true
 
+[Reflection.Assembly]::LoadWithPartialName("System.Web")
+
 function Get-Hash
 {
   param
@@ -85,12 +87,14 @@ function Get-RssEnclosures
   }
 
   $client = New-Object Net.WebClient
-  
-  $feed = [xml]$client.DownloadString($rssUrl)
+
+  ""
+  "Opening: $rssUrl"  
+  $response = $client.DownloadString($rssUrl)
+  $feed = [xml]$response.Substring($response.IndexOf('<'))
   $feedTitle = $feed.rss.channel.title
   
-  ""
-  "Feed: $feedTitle..."
+  "Feed Title: $feedTitle..."
   
   $feed.rss.channel.item | foreach `
   {
@@ -138,7 +142,7 @@ function Get-RssEnclosures
             }
           }
           
-          if ((-not $downloadFiles) -or (test-path ($filePath)))
+          if ((-not $downloadFiles) -or (test-path ([Web.HttpUtility]::UrlDecode($filePath))))
           {
             $ob = New-Object PSObject `
               | Add-Member -MemberType NoteProperty -Name "pubdate" -Value $pubdate -PassThru `
