@@ -9,10 +9,11 @@
     Author     : Julian Easterling <julian@julianscorner.com> 
 #>  
 
-$global:workingDirectory = "D:\Videos\_download"
-$global:dat = $workingDirectory + "\webcasts.dat"
-$global:opmlFile = $workingDirectory + "\webcasts.opml"
-$global:ignoreFile = $workingDirectory + "\webcasts.ignore"
+$global:baseDirectory = "D:\Videos"
+$global:workingDirectory = $baseDirectory + "\_download"
+$global:dat = $baseDirectory + "\webcasts.dat"
+$global:opmlFile = $baseDirectory + "\webcasts.opml"
+$global:ignoreFile = $baseDirectory + "\webcasts.ignore"
 $global:downloadFiles = $true
 
 [Reflection.Assembly]::LoadWithPartialName("System.Web")
