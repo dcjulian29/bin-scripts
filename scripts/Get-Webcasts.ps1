@@ -125,7 +125,9 @@ function Get-RssEnclosures
         # sometimes items have a non-parsable 'EDT' as part of pubdate 
         $pubdate = [DateTime]::Parse($_.pubdate.Replace("EDT", "-4"))
         $title = $_.title
-        $enclosureUrl = new-object Uri($enclosure.url)
+        $enclosureUrl = $enclosure.url
+        $enclosureUrl = $enclosureUrl.substring($enclosureUrl.indexof("http"))
+        $enclosureUrl = new-object Uri($enclosureUrl)
         $fileName = $enclosureUrl.Segments[-1]
         $filePath = (join-path $destinationFolder $filename)
         $prehash = $feedTitle + $title + $enclosureUrl
