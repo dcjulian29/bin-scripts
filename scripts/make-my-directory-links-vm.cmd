@@ -12,7 +12,6 @@ mklink /D %SYSTEMDRIVE%\bin Z:\bin
 mklink /D %SYSTEMDRIVE%\cygwin Z:\cygwin
 mklink /D %SYSTEMDRIVE%\dev Z:\dev
 mklink /D %SYSTEMDRIVE%\etc Z:\etc
-mklink /D %SYSTEMDRIVE%\Temp Z:\Temp
 
 :: PowerShell
 rmdir /s /q %UP%\Documents\WindowsPowerShell 
