@@ -10,7 +10,8 @@ set UP=%SYSTEMDRIVE%\Users\jeast836
 :: VM Drive
 mklink /D %SYSTEMDRIVE%\bin Z:\bin
 mklink /D %SYSTEMDRIVE%\cygwin Z:\cygwin
-mklink /D %SYSTEMDRIVE%\dev Z:\dev
+::mklink /D %SYSTEMDRIVE%\dev Z:\dev
+mkdir %SYSTEMDRIVE\dev
 mklink /D %SYSTEMDRIVE%\etc Z:\etc
 
 :: PowerShell
