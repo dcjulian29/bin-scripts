@@ -16,7 +16,7 @@ echo Setting monitor brightness to %1%%
 
 SET PSHELL=PowerShell -NoLogo -NoProfile -NonInteractive -Command
 
-%PSHELL% "& C:\bin\scripts\Set-MonitorBrightness.ps1 %1"
+%PSHELL% ". C:\bin\WindowsPowerShell\GlobalScripts\10\Set-MonitorBrightness.ps1; Set-MonitorBrightness %1"
 
 echo.
 
