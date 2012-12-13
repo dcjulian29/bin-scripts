@@ -29,6 +29,6 @@ echo.
 echo Synchronizing %SDIR% to %DDIR%...
 echo.
 
-robocopy %SDIR% %DDIR% /MIR /Z /MT /COPY:DAT /DCOPY:DAT /V /TIMFIX /R:1 /W:5
+robocopy %SDIR% %DDIR% /MIR /Z /MT /COPY:DAT /DCOPY:T /V /TIMFIX /R:1 /W:5
 
 :EOF
