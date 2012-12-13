@@ -13,7 +13,7 @@ goto EOF
 ::------------------------------------------------------------------------------
 
 setlocal
-set UP=%SYSTEMDRIVE%\Users\jeast836
+set UP=%SYSTEMDRIVE%\Users\Julian
 
 ::------------------------------------------------------------------------------
 
@@ -45,12 +45,12 @@ mklink %UP%\.minttyrc %SYSTEMDRIVE%\etc\cygwin\minttyrc
 mklink %UP%\.Xresources %SYSTEMDRIVE%\etc\cygwin\Xresources
 
 :: Downloads, Pictures, Videos
-rmdir /s /q %UP%\Downloads >nul
-mklink /D %UP%\Downloads D:\Downloads
-rmdir /s /q %UP%\Pictures >nul
-mklink /D %UP%\Pictures D:\jnet\pictures
-rmdir /s /q %UP%\Videos >nul
-mklink /D %UP%\Videos D:\jnet\videos
+::rmdir /s /q %UP%\Downloads >nul
+::mklink /D %UP%\Downloads D:\Downloads
+::rmdir /s /q %UP%\Pictures >nul
+::mklink /D %UP%\Pictures D:\jnet\pictures
+::rmdir /s /q %UP%\Videos >nul
+::mklink /D %UP%\Videos D:\jnet\videos
 
 :: Document Folder Links
 mklink /D "%UP%\Documents\JNet" D:\JNet\docs
