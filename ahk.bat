@@ -1,0 +1,1 @@
+@c:\bin\AutoHotkey\AutoHotkey.exe %*
