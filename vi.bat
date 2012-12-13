@@ -1,0 +1,1 @@
+@C:\bin\vim\gVimPortable.exe %*
