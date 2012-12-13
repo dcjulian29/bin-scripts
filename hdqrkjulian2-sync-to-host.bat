@@ -14,7 +14,7 @@ goto EOF
 set SRC=C:
 set DST=Z:
 
-call mirror-folder %SRC%\dev\ %DST%\dev\
+call dir-sync %SRC%\dev\ %DST%\dev\
 
 if [%1] == [ALL] goto ALL
 if [%1] == [all] goto ALL
