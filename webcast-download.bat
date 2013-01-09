@@ -14,7 +14,7 @@ set DST=%2
 
 :STARTDOWNLOAD
 
-%SystemDrive%\bin\network\wget\wget.exe %SRC% -P "%dst%" --continue --tries=10 --restrict-file-names=windows
+%SystemDrive%\bin\network\wget\wget.exe "%SRC%" -P "%dst%" --continue --tries=10 --restrict-file-names=windows
 
 goto EOF
 
