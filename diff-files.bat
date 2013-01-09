@@ -1,0 +1,1 @@
+@C:\bin\file\WinMerge\WinMergePortable.exe %*
