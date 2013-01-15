@@ -42,7 +42,7 @@ echo.
 echo Resizing "%ODISK%" virtual disk...
 echo.
 
-%VDM% -x %NSIZE% %VM%\%ODISK%
+%VDM% -x %NSIZE% "%VM%\%ODISK%"
 
 echo.
 echo Virtual disk operation complete.

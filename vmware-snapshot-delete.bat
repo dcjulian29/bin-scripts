@@ -10,7 +10,7 @@ echo.
 echo Deleting "%VMNAME%" virtual machine snapshot...
 echo.
 
-RMDIR /S /Q %SNAP%
+RMDIR /S /Q "%SNAP%"
 
 echo.
 echo Snapshot operation complete.

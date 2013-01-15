@@ -27,7 +27,7 @@ echo.
 echo Defragging "%ODISK%" virtual disk...
 echo.
 
-%VDM% -d %VM%\%ODISK%
+%VDM% -d "%VM%\%ODISK%"
 
 echo.
 echo Virtual disk operation complete.

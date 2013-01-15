@@ -42,7 +42,7 @@ echo.
 echo Renaming "%ODISK%" virtual disk...
 echo.
 
-%VDM% -n %VM%\%ODISK% %VM%\%NDISK%
+%VDM% -n "%VM%\%ODISK%" "%VM%\%NDISK%"
 
 echo.
 echo Virtual disk operation complete.

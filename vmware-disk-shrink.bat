@@ -27,7 +27,7 @@ echo.
 echo Shrinking "%ODISK%" virtual disk...
 echo.
 
-%VDM% -k %VM%\%ODISK%
+%VDM% -k "%VM%\%ODISK%"
 
 echo.
 echo Virtual disk operation complete.

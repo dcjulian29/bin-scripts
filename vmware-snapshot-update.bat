@@ -10,7 +10,7 @@ echo.
 echo Updating the snapshot of "%VMNAME%" virtual machine...
 echo.
 
-robocopy %VM% %SNAP% /MIR /Z /SL /MT /XJ /R:5 /W:5
+robocopy "%VM%" "%SNAP%" /MIR /Z /SL /MT /XJ /R:5 /W:5
 
 echo.
 echo Snapshot operation complete.
