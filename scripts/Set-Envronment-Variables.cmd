@@ -7,7 +7,7 @@ setx HOME %USERPROFILE%
 
 :: Need to be elevated...
 
-setx /m PATH %SYSTEMDRIVE%\bin;%PATH%
+setx /m PATH "%SYSTEMDRIVE%\bin;%PATH%"
 
 :: On development systems
 
