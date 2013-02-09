@@ -1,0 +1,1 @@
+@start "" /B %~dp0file\WinMerge\WinMergePortable.exe /s /r /u %*
