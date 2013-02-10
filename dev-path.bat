@@ -5,6 +5,6 @@ set DEVPATH=%BINPATH%development-tools
 
 path %DEVPATH%\mecurial;%PATH%
 path %DEVPATH%\svn\bin;%PATH%
-path %DEVPATH%\GitTfs;%PATH%
+path %DEVPATH%\git-tfs;%PATH%
 path %DEVPATH%\msysgit\bin;%PATH%
 path %DEVPATH%;%PATH%
