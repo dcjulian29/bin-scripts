@@ -1,18 +1,31 @@
 // elevate.js -- runs target command line elevated
-if (WScript.Arguments.Length >= 1) {
-  Application = WScript.Arguments(0);
-  Arguments = "";
-  for (Index = 1; Index < WScript.Arguments.Length; Index += 1)
+if (WScript.arguments.Length >= 1)
+{
+  application = WScript.arguments(0);
+  arguments = "";
+  
+  for (Index = 1; Index < WScript.arguments.Length; Index += 1) 
   {
     if (Index > 1)
     {
-      Arguments += " ";
+      arguments += " ";
     }
-    Arguments += WScript.Arguments(Index);
+    
+    var current = WScript.arguments(Index);
+
+    if (current.indexOf(' ') !== -1)
+    {
+      current = '"' + current + '"'
+    }
+    
+    arguments += current;
   }
-  new ActiveXObject("Shell.Application").ShellExecute(Application, Arguments, "", "runas");
+
+  var app = new ActiveXObject("Shell.application")
+  
+  app.ShellExecute(application, arguments, "", "runas");
 }
 else 
 {
-  WScript.Echo("Usage: elevate.js Application Arguments");
+  WScript.Echo("Usage: elevate application arguments");
 }
