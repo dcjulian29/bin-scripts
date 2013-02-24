@@ -2,6 +2,12 @@
 
 setlocal
 
-call C:\bin\vmware\_vm_settings.cmd
+call %SYSTEMDRIVE%\bin\vmware\_vm_settings.cmd
 
-%SystemRoot%\System32\rundll32.exe "%VMPROG%\vmnetui.dll" VMNetUI_ShowStandalone
+set CMD=%SystemRoot%\System32\rundll32.exe
+set DLL="%VMPROG%\vmnetui.dll"
+set EP=VMNetUI_ShowStandalone
+
+set START=%CMD% %DLL% %EP%
+
+%SYSTEMDRIVE%\bin\elevate.bat %START%
