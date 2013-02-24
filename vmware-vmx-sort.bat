@@ -1,20 +1,15 @@
-@setlocal enableextensions & C:\python\python.exe -x %~f0 %* & goto :EOF
-import sys
+@echo off
 
-filename = sys.argv[1]
-lines = []
+setlocal
 
-fp = open(filename, 'r')
-for line in fp:
-  if not line.strip():
-    continue
-  lines.append(line)
-fp.close()
+call %SYSTEMDRIVE%\bin\vmware\_vm_settings.cmd
 
-lines.sort()
+echo.
+echo Sorting %1
+echo.
 
-fp = open(filename, 'w')
-for line in lines:
-  fp.write(line)
-  fp.flush()
-fp.close()
+call %SYSTEMDRIVE%\bin\python.bat %SYSTEMDRIVE%\bin\vmware\vmx-sort.py %1
+
+echo.
+echo Sorting operation complete.
+echo.
