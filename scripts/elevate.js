@@ -1,7 +1,7 @@
 // elevate.js -- runs target command line elevated
-if (WScript.arguments.Length >= 1)
+if (WScript.Arguments.Length >= 1) {
 {
-  application = WScript.arguments(0);
+  application = WScript.Arguments(0);
   arguments = "";
   
   for (Index = 1; Index < WScript.arguments.Length; Index += 1) 
