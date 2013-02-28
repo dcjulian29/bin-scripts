@@ -1,18 +1,14 @@
 @echo off
+:: %1 - Old Disk Name
+:: %2 - New Disk Name
 
 setlocal
 
 call C:\bin\vmware\_vm_settings.cmd
-call C:\bin\vmware\ask-vm-directory.cmd YES NA %1
-if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
 
-:: %1 - VM Name --> %VM%
-:: %2 - Old Disk Name
-:: %3 - New Disk Name
+IF "%1" == "" GOTO P2
 
-IF "%2" == "" GOTO P2
-
-SET ODISK=%2
+SET ODISK=%1
 GOTO C2
 
 :P2
@@ -24,7 +20,7 @@ IF [] neq [%NP1%] SET ODISK=%NP1: =%
 
 :C2
 
-IF "%3" == "" GOTO P3
+IF "%2" == "" GOTO P3
 
 SET NDISK=%3
 GOTO C3
@@ -42,7 +38,7 @@ echo.
 echo Renaming "%ODISK%" virtual disk...
 echo.
 
-%VDM% -n "%VM%\%ODISK%" "%VM%\%NDISK%"
+%VDM% -n "%ODISK%" "%NDISK%"
 
 echo.
 echo Virtual disk operation complete.
