@@ -7,6 +7,5 @@ SpiderOak.exe -v --batchmode --destroy-shelved-x
 SpiderOak.exe -v --batchmode --repair
 
 echo.
-pause
 
 popd

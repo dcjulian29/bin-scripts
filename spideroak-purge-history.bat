@@ -6,6 +6,5 @@ SpiderOak.exe --shutdown
 SpiderOak.exe -v --batchmode --purge-historical-versions all
 
 echo.
-pause
 
 popd
