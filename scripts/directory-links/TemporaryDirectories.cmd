@@ -39,7 +39,10 @@ echo.
 :C1
 
 :: Browser Cache - Firefox
-set C="%UP%\AppData\Local\Mozilla\Firefox\Profiles\vj6gmdj0.default\Cache"
+set C=%UP%\AppData\Local\Mozilla\Firefox\Profiles
+set PROFILE=
+for /f "usebackq delims=" %O in (`dir /b /ad %C%`) do set PROFILE=%O
+set C=%C%\%PROFILE%\Cache
 
 if not exist %C% goto C2
 if exist %C% rmdir /s /q %C%
