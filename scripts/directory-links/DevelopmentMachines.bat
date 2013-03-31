@@ -17,7 +17,3 @@ mklink %UP%\.gitattributes %SYSTEMDRIVE%\etc\git\gitattributes
 mklink %UP%\.gitconfig %SYSTEMDRIVE%\etc\git\gitconfig
 mklink %UP%\.gitignore %SYSTEMDRIVE%\etc\git\gitignore
 mklink %UP%\.gitk %SYSTEMDRIVE%\etc\cygwin\gitk
-mklink %UP%\.Xresources %SYSTEMDRIVE%\etc\cygwin\Xresources
-
-
-
