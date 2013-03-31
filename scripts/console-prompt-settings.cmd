@@ -45,19 +45,9 @@ echo "CurrentPage"=dword:00000003 >> %CS%
 echo "FaceName"="Consolas" >> %CS%
 
 echo. >> %CS%
-echo [HKEY_CURRENT_USER\Console\%%SystemRoot%%_System32_WindowsPowerShell_v1.0_powershell.exe] >> %CS%
-echo "PopupColors"=dword:000000f3 >> %CS%
-echo "ColorTable05"=dword:00562401 >> %CS%
-echo "WindowSize"=dword:00320078 >> %CS%
-echo "ColorTable06"=dword:00f0edee >> %CS%
-
+echo [-HKEY_CURRENT_USER\Console\%%SystemRoot%%_System32_WindowsPowerShell_v1.0_powershell.exe] >> %CS%
 echo. >> %CS%
-echo [HKEY_CURRENT_USER\Console\%%SystemRoot%%_SysWOW64_WindowsPowerShell_v1.0_powershell.exe] >> %CS%
-echo "PopupColors"=dword:000000f3 >> %CS%
-echo "ColorTable05"=dword:00562401 >> %CS%
-echo "WindowSize"=dword:00320078 >> %CS%
-echo "ColorTable06"=dword:00f0edee >> %CS%
-
+echo [-HKEY_CURRENT_USER\Console\%%SystemRoot%%_SysWOW64_WindowsPowerShell_v1.0_powershell.exe] >> %CS%
 echo. >> %CS%
 
 REG IMPORT %CS%
