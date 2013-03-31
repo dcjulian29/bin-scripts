@@ -5,6 +5,7 @@
 :: %3 -- Destination Directory
 :: %4 -- Filter to use
 
+if [%1] == [*] goto CORRECTHOST
 if [%COMPUTERNAME%] == [%1] goto CORRECTHOST
 
 echo.
