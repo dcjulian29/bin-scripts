@@ -1,6 +1,6 @@
 :: Am I elevated?
 
-at >nul
+WhoAmI /Groups | Find "S-1-16-12288" > nul
 
 if %ERRORLEVEL% EQU 0 exit /b 99
 
