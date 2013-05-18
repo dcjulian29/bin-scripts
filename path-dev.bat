@@ -1,6 +1,6 @@
 @echo off
 
-for /f "usebackq delims=" %%O in (`where dev-path.bat`) do set BINPATH=%%~dpO
+for /f "usebackq delims=" %%O in (`where path-dev.bat`) do set BINPATH=%%~dpO
 set DEVPATH=%BINPATH%development-tools
 
 path %DEVPATH%\mecurial;%PATH%
