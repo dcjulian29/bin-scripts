@@ -15,13 +15,14 @@ goto EOF
 :DEV
 
 :: On development systems
-set SYM=C:\symbols
+::set SYM=C:\symbols
 
-if not exist "%SYM%" mkdir "%SYM%"
+::if not exist "%SYM%" mkdir "%SYM%"
 
-setx /m _NT_SOURCE_PATH SRV*%SYM%
-setx /m _NT_SYMBOL_PATH SRV*%SYM%*http://msdl.microsoft.com/download/symbols
-setx /m _NT_SYMCACHE_PATH %SYM%
-setx /m PATH "%SYSTEMDRIVE%\bin\development-tools;%PATH%"
+::setx /m _NT_SOURCE_PATH SRV*%SYM%
+::setx /m _NT_SYMBOL_PATH SRV*%SYM%*http://msdl.microsoft.com/download/symbols
+::setx /m _NT_SYMCACHE_PATH %SYM%
+::setx /m PATH "%SYSTEMDRIVE%\bin\development-tools;%PATH%"
+setx /m TERM msys
 
 :EOF
