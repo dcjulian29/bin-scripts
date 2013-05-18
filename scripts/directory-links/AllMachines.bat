@@ -10,6 +10,9 @@ mklink /J %UP%\Documents\WindowsPowerShell %SYSTEMDRIVE%\bin\WindowsPowerShell
 :: SSH
 mklink /J %UP%\.ssh %SYSTEMDRIVE%\etc\ssh
 
+:: GPG
+mklink /J %UP%\.gnupg %SYSTEMDRIVE%\etc\gnupg
+
 :: Cygwin
 mklink %UP%\.bash_profile %SYSTEMDRIVE%\etc\cygwin\bash_profile
 mklink %UP%\.bashrc %SYSTEMDRIVE%\etc\cygwin\bashrc
