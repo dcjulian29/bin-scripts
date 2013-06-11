@@ -20,6 +20,7 @@ mklink /D "%UP%\Documents\JNet" D:\JNet\docs
 mklink /D "%UP%\Documents\JCoG" D:\JCoG\docs
 mklink /D "%UP%\Documents\Marriott" D:\Marriott\docs
 mklink /D "%UP%\Documents\eBooks" D:\eBooks
+mklink /D "%UP%\Documents\Virtual Machines" D:\vm
 
 :: Picture Folder Links
 mklink /D "%UP%\Picture\AAMVA" D:\AAMVA\pics
