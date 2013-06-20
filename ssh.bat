@@ -1,6 +1,7 @@
 @echo off
 setlocal
 SET CYGWIN=%CYGWIN% nodosfilewarning
+SET TERM=
 
 c:\cygwin\bin\ssh.exe %*
 
