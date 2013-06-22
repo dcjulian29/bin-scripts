@@ -1,10 +1,10 @@
 @echo off
 
 ::------------------------------------------------------------------------------
-call %SYSTEMDRIVE%\bin\scripts\directory-links\_SetUserProfileDirectory.bat
+call %SYSTEMDRIVE%\bin\scripts\directory-links\_SetUserProfileDirectory.cmd
 ::------------------------------------------------------------------------------
 
-set D=%SYSTEMDRIVE%\dev
+set D=%SYSTEMDRIVE%\home\jnet\dev
 
 if not exist %D%\ mkdir %D%
 
