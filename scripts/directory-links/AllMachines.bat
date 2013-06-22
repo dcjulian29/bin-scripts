@@ -1,7 +1,7 @@
 @echo off
 
 ::------------------------------------------------------------------------------
-call %SYSTEMDRIVE%\bin\scripts\directory-links\_SetUserProfileDirectory.bat
+call %SYSTEMDRIVE%\bin\scripts\directory-links\_SetUserProfileDirectory.cmd
 ::------------------------------------------------------------------------------
 
 :: PowerShell
