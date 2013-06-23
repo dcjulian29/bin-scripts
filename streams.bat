@@ -1,1 +1,0 @@
-@c:\bin\sysinternals\streams.exe %*
