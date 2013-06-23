@@ -11,6 +11,9 @@ GOTO EOF
 
 :C1
 
+call %SYSTEMDRIVE%\bin\_isElevated.cmd YES "%0" %*
+if %ERRORLEVEL% NEQ 99 goto EOF
+
 echo.
 echo Setting monitor brightness to %1%%
 
