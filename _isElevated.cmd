@@ -1,6 +1,6 @@
 :: Am I elevated?
 
-WhoAmI /Groups | Find "S-1-16-12288" > nul
+WhoAmI /Groups | %WINDIR%\System32\find.exe "S-1-16-12288" >nul 2>nul
 
 if %ERRORLEVEL% EQU 0 exit /b 99
 
