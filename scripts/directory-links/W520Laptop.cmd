@@ -17,20 +17,19 @@ call %SYSTEMDRIVE%\bin\scripts\directory-links\_SetUserProfileDirectory.cmd
 :: "Home" directory Links to Aggregate "Data" Directories
 :: Temporary until next Laptop when only one drive will be in system.
 if not exist %SYSTEMDRIVE%\home mkdir %SYSTEMDRIVE%\home
-mklink /D "%SYSTEMDRIVE%\home\AAMVA" D:\AAMVA
+mklink /D "%SYSTEMDRIVE%\home\FEi" D:\FEi
 mklink /D "%SYSTEMDRIVE%\home\JCoG" D:\JCoG
 mklink /D "%SYSTEMDRIVE%\home\JNet" D:\JNet
-mklink /D "%SYSTEMDRIVE%\home\Marriott" D:\Marriott
 
 :: Document Folder Links
-mklink /D "%UP%\Documents\AAMVA" %SYSTEMDRIVE%\home\AAMVA\docs
+mklink /D "%UP%\Documents\FEi" %SYSTEMDRIVE%\home\FEi\docs
 mklink /D "%UP%\Documents\JNet" %SYSTEMDRIVE%\home\JNet\docs
 mklink /D "%UP%\Documents\JCoG" %SYSTEMDRIVE%\home\JCoG\docs
-mklink /D "%UP%\Documents\Marriott" %SYSTEMDRIVE%\home\Marriott\docs
 mklink /D "%UP%\Documents\eBooks" D:\eBooks
 mklink /D "%UP%\Documents\Virtual Machines" D:\vm
 
 :: Picture Folder Links
+mklink /D "%UP%\Pictures\FEi" %SYSTEMDRIVE%\home\FEi\pics
 mklink /D "%UP%\Pictures\JCoG" %SYSTEMDRIVE%\home\JCoG\pics
 mklink /D "%UP%\Pictures\JNet" %SYSTEMDRIVE%\home\JNet\pics
 mklink /D "%UP%\Pictures\Other" D:\Pictures
