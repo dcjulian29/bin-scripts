@@ -14,6 +14,7 @@ mklink /J %UP%\.ssh %SYSTEMDRIVE%\etc\ssh
 mklink /J %UP%\.gnupg %SYSTEMDRIVE%\etc\gnupg
 
 :: Cygwin
+mklink %UP%\.profile %SYSTEMDRIVE%\etc\cygwin\profile
 mklink %UP%\.bash_profile %SYSTEMDRIVE%\etc\cygwin\bash_profile
 mklink %UP%\.bashrc %SYSTEMDRIVE%\etc\cygwin\bashrc
 mklink %UP%\.inputrc %SYSTEMDRIVE%\etc\cygwin\inputrc
@@ -24,4 +25,5 @@ mkdir %SYSTEMDRIVE%\cygwin\home
 mklink /J %SYSTEMDRIVE%\cygwin\home\%USERNAME% %UP%
 
 :: Other
-mklink %UP%\.etc %SYSTEMDRIVE%\etc
+mklink /J %UP%\.etc %SYSTEMDRIVE%\etc
+mklink /J %UP%\.bin %SYSTEMDRIVE%\bin
