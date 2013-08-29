@@ -34,6 +34,6 @@ goto CONT
 
 :CONT
 
-java.exe %*
+javaw.exe %*
 
 :EOF
