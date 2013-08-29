@@ -1,3 +1,3 @@
 @echo off
 
-path %PATH%;%ProgramFiles%\MongoDB
+path %PATH%;C:\Program Files\MongoDB\bin
