@@ -27,3 +27,7 @@ mklink /J %SYSTEMDRIVE%\cygwin\home\%USERNAME% %UP%
 :: Other
 mklink /J %UP%\.etc %SYSTEMDRIVE%\etc
 mklink /J %UP%\.bin %SYSTEMDRIVE%\bin
+
+::BTSync
+if not exist %UP%\BTSync mkdir %UP%\BTSync
+mklink /D "%UP%\Documents\BTSync" "%UP%\BTSync"
