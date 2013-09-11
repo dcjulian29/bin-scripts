@@ -1,1 +1,1 @@
-@C:\bin\vim\gVimPortable.exe %*
+@%SYSTEMDRIVE%\bin\np.bat %*
