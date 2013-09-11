@@ -18,6 +18,7 @@ call %SYSTEMDRIVE%\bin\scripts\directory-links\_SetUserProfileDirectory.cmd
 :: Temporary until next Laptop when only one drive will be in system.
 if not exist %SYSTEMDRIVE%\home mkdir %SYSTEMDRIVE%\home
 mklink /D "%SYSTEMDRIVE%\home\FEi" D:\FEi
+mklink /D "%SYSTEMDRIVE%\home\SNVUSA" D:\SNVUSA
 mklink /D "%SYSTEMDRIVE%\home\JCoG" D:\JCoG
 mklink /D "%SYSTEMDRIVE%\home\JNet" D:\JNet
 
@@ -32,17 +33,7 @@ mklink /D "%UP%\Documents\Virtual Machines" D:\vm
 mklink /D "%UP%\Pictures\FEi" %SYSTEMDRIVE%\home\FEi\pics
 mklink /D "%UP%\Pictures\JCoG" %SYSTEMDRIVE%\home\JCoG\pics
 mklink /D "%UP%\Pictures\JNet" %SYSTEMDRIVE%\home\JNet\pics
-mklink /D "%UP%\Pictures\Other" D:\Pictures
-mklink /D "%UP%\Pictures\Photos" D:\Photos
 
-:: Videos Folder Links
-mklink /D "%UP%\Videos\Other" D:\Videos
-mklink /D "%UP%\Videos\Webcasts" D:\Webcasts
-
-:: Other Links
-mklink /D "%UP%\Desktop\ReviewThis" "%UP%\SkyDrive\Favorites"
-mklink /D "%UP%\Documents\Outlook Files\archives" "D:\archives\Outlook"
-mklink /D "%UP%\Documents\Outlook Files\archives\_ExternalArchive" "L:\archives\Outlook"
-mklink /D "%UP%\Downloads\Magazines\" "%UP%\SkyDrive\Magazines"
-mklink /D "%UP%\Downloads\_D" "D:\Downloads"
-mklink /D "%UP%\Downloads\_TOSOFTWARE" "D:\Downloads\_TOSOFTWARE"
+:SkyDrive
+if not exist %UP%\SkyDrive mkdir %UP%\SkyDrive
+mklink /D "%UP%\Documents\SkyDrive" "%UP%\SkyDrive"
