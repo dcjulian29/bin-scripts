@@ -12,6 +12,7 @@ mklink /J %UP%\.ssh %SYSTEMDRIVE%\etc\ssh
 
 :: GPG
 mklink /J %UP%\.gnupg %SYSTEMDRIVE%\etc\gnupg
+mklink /J %UP%\AppData\Roaming\gnupg %SYSTEMDRIVE%\etc\gnupg
 
 :: Cygwin
 mklink %UP%\.profile %SYSTEMDRIVE%\etc\cygwin\profile
