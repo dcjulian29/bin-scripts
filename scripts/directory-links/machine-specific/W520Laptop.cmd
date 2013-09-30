@@ -50,3 +50,8 @@ mklink /D "%UP%\Downloads\_TOSOFTWARE" "D:\Downloads\_TOSOFTWARE"
 
 mklink /D "%SYSTEMDRIVE%\bin" %SYSTEMDRIVE%\home\JNet\bin
 mklink /D "%SYSTEMDRIVE%\etc" %SYSTEMDRIVE%\home\JNet\etc
+
+:: Virtual Machines
+if not exist D:\vm mkdir D:\vm
+mklink /D %SYSTEMDRIVE%\vm D:\vm
+
