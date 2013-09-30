@@ -26,8 +26,9 @@ mklink /D "%SYSTEMDRIVE%\home\JNet" D:\JNet
 mklink /D "%UP%\Documents\FEi" %SYSTEMDRIVE%\home\FEi\docs
 mklink /D "%UP%\Documents\JNet" %SYSTEMDRIVE%\home\JNet\docs
 mklink /D "%UP%\Documents\JCoG" %SYSTEMDRIVE%\home\JCoG\docs
-mklink /D "%UP%\Documents\eBooks" D:\eBooks
-mklink /D "%UP%\Documents\Virtual Machines" D:\vm
+mklink /D "%UP%\Documents\eBooks" %SYSTEMDRIVE%\home\jnet\ebooks
+mklink /D "%UP%\Documents\PaperPort" %SYSTEMDRIVE%\home\jnet\paperport
+mklink /D "%UP%\Documents\Virtual Machines" "E:\Virtual Machines"
 
 :: Picture Folder Links
 mklink /D "%UP%\Pictures\FEi" %SYSTEMDRIVE%\home\FEi\pics
@@ -37,3 +38,13 @@ mklink /D "%UP%\Pictures\JNet" %SYSTEMDRIVE%\home\JNet\pics
 :SkyDrive
 if not exist %UP%\SkyDrive mkdir %UP%\SkyDrive
 mklink /D "%UP%\Documents\SkyDrive" "%UP%\SkyDrive"
+
+
+mklink /D %SYSTEMDRIVE%\bin %SYSTEMDRIVE%\home\jnet\bin
+mklink /D %SYSTEMDRIVE%\etc %SYSTEMDRIVE%\home\jnet\etc
+
+:: Virtual Machines
+if not exist E:\vm mkdir E:\vm
+mklink /D %SYSTEMDRIVE%\vm "E:\Virtual Machines"
+
+:: Now Run "All Machines"
