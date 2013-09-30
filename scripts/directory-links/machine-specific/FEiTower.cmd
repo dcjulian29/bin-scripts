@@ -16,3 +16,7 @@ if not exist %TARGETHOME%\fei\pics mkdir %TARGETHOME%\%ENVIRONMENT%\pics
 mklink /D "%SYSTEMDRIVE%\dev" %DATAHOME%\dev
 mklink /D "%UP%\Documents\FEi" %DATAHOME%\docs
 mklink /D "%UP%\Pictures\FEi" %DATAHOME%\pics
+
+
+:: Virtual Machines
+if not exist %SYSTEMDRIVE%\vm mkdir %SYSTEMDRIVE%\vm
