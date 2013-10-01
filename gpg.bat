@@ -1,8 +1,9 @@
 @echo off
 setlocal
-SET CYGWIN=%CYGWIN% nodosfilewarning
 
-c:\cygwin\bin\gpg.exe %*
+path %~dp0gpg;%path%
+
+gpg2.exe --verbose %*
 
 if %ERRORLEVEL% == 0 goto EOF
 
