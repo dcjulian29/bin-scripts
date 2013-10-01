@@ -1,11 +1,31 @@
 @echo off
 setlocal
-SET CYGWIN=%CYGWIN% nodosfilewarning
 
-c:\cygwin\bin\gpg.exe --recipient "Julian Easterling" --output "%1.gpg" --encrypt "%1"
+if [%1] == [] goto NOFILE
+if [%2] == [] goto NORECIPIENT
 
-if %ERRORLEVEL% == 0 goto EOF
+set RECIPIENT=%2
 
-pause
+goto CONT
 
-:EOF
+:NOFILE
+
+echo.
+echo Please provide the file name
+echo.
+
+goto EOF
+
+:NORECIPIENT
+
+echo.
+echo Recipient was not provided... Encrypting to self...
+echo.
+
+set RECIPIENT=Julian Easterling
+
+:CONT
+
+call %~dp0gpg.bat --recipient "%RECIPIENT%" --output "%1.gpg" --encrypt "%1"
+
+endlocal
