@@ -1,37 +1,30 @@
 @echo off
 setlocal
 
-if [%1] == [] goto C1
+if [%1] == [] goto NOFILE
+if [%2] == [] goto NORECIPIENT
 
-goto C2
+goto CONT
 
-:C1
+:NOFILE
 
 echo.
-echo Please provide recipient...
+echo Please provide the file name
 echo.
 
 goto EOF
 
-:C2
+:NORECIPIENT
 
-set TEMPFILE=%TEMP%\redirectinput.%RANDOM%
+echo.
+echo Please provide the recipent
+echo.
 
-del /F %TEMPFILE% 2>nul
+goto EOF
 
-:: Redirect Input to a file that GPG can work on since Windows Batch files don't have an easy way
-:: to accept input from the pipeline...
-for /F "tokens=*" %%A in ('findstr /n $') do (
-  set "line=%%A"
-  setlocal EnableDelayedExpansion
-  set "line=!line:*:=!"
-  echo(!line! >> %TEMPFILE%
-  endlocal
-)
+:CONT
 
-type %TEMPFILE% | call %~dp0gpg.bat --encrypt --armor --recipient "%1" --force-mdc
-
-del /F %TEMPFILE% 2>nul
+call %~dp0gpg.bat --force-mdc --armor --recipient "%2" --encrypt "%1" 
 
 :EOF
 

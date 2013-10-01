@@ -1,23 +1,21 @@
 @echo off
 setlocal
 
-set TEMPFILE=%TEMP%\redirectinput.%RANDOM%
+if [%1] == [] goto NOFILE
 
-del /F %TEMPFILE% 2>nul
+goto CONT
 
-:: Redirect Input to a file that GPG can work on since Windows Batch files don't have an easy way
-:: to accept input from the pipeline...
-for /F "tokens=*" %%A in ('findstr /n $') do (
-  set "line=%%A"
-  setlocal EnableDelayedExpansion
-  set "line=!line:*:=!"
-  echo(!line! >> %TEMPFILE%
-  endlocal
-)
+:NOFILE
 
-type %TEMPFILE% | call %~dp0gpg.bat --clearsign --recipient "%1" --force-mdc
+echo.
+echo Please provide the file name
+echo.
 
-del /F %TEMPFILE% 2>nul
+goto EOF
+
+:CONT
+
+call %~dp0gpg.bat --force-mdc --clearsign "%1"
 
 :EOF
 
