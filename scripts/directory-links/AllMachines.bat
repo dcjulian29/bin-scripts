@@ -1,8 +1,5 @@
-@echo off
-
-::------------------------------------------------------------------------------
-call %SYSTEMDRIVE%\bin\scripts\directory-links\_SetUserProfileDirectory.cmd
-::------------------------------------------------------------------------------
+:: Make sure to run the Machine-Specific Directory Script First...
+::-----------------------------------------------------------------
 
 :: PowerShell
 mklink /J %UP%\Documents\WindowsPowerShell %SYSTEMDRIVE%\bin\WindowsPowerShell
@@ -22,13 +19,6 @@ mklink %UP%\.inputrc %SYSTEMDRIVE%\etc\cygwin\inputrc
 mklink %UP%\.minttyrc %SYSTEMDRIVE%\etc\cygwin\minttyrc
 mklink %UP%\.Xresources %SYSTEMDRIVE%\etc\cygwin\Xresources
 
+mkdir %SYSTEMDRIVE%\cygwin
 mkdir %SYSTEMDRIVE%\cygwin\home
 mklink /J %SYSTEMDRIVE%\cygwin\home\%USERNAME% %UP%
-
-:: Other
-mklink /J %UP%\.etc %SYSTEMDRIVE%\etc
-mklink /J %UP%\.bin %SYSTEMDRIVE%\bin
-
-::BTSync
-if not exist %UP%\BTSync mkdir %UP%\BTSync
-mklink /D "%UP%\Documents\BTSync" "%UP%\BTSync"
