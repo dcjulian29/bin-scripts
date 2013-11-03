@@ -5,24 +5,30 @@ setlocal
 call %SYSTEMDRIVE%\bin\_isElevated.cmd YES "%0" %*
 if %ERRORLEVEL% NEQ 99 goto EOF
 
-if [%1] EQU [dev] goto DEV
-
+echo Setting HOME to %USERPROFILE%
+echo.
 setx HOME %USERPROFILE%
-call %~dp0\set-path.bat
 
-goto EOF
-
-:DEV
-
-:: On development systems
-::set SYM=C:\symbols
-
-::if not exist "%SYM%" mkdir "%SYM%"
-
-::setx /m _NT_SOURCE_PATH SRV*%SYM%
-::setx /m _NT_SYMBOL_PATH SRV*%SYM%*http://msdl.microsoft.com/download/symbols
-::setx /m _NT_SYMCACHE_PATH %SYM%
-::setx /m PATH "%SYSTEMDRIVE%\bin\development-tools;%PATH%"
 setx /m TERM msys
+
+set PDIR="%ProgramFiles(x86)%"
+
+if [%PDIR%] == [""] goto B32
+
+goto B64
+
+:B32
+
+set PDIR="%ProgramFiles%"
+
+:B64
+
+echo Setting PF32 to %PDIR%
+echo.
+
+setx /m PF32 %PDIR%
+
+
+call %~dp0\set-path.bat
 
 :EOF
