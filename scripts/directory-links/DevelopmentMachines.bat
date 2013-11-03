@@ -1,16 +1,5 @@
-@echo off
-
-::------------------------------------------------------------------------------
-call %SYSTEMDRIVE%\bin\scripts\directory-links\_SetUserProfileDirectory.cmd
-::------------------------------------------------------------------------------
-
-:: Mecurial
-mklink /J %UP%\.hgrc %SYSTEMDRIVE%\etc\mecurial\hgrc
-
-:: Subversion
-mklink /J %UP%\.subversion %SYSTEMDRIVE%\etc\subversion
-mklink /J %UP%\AppData\Roaming\Subversion %SYSTEMDRIVE%\etc\subversion
-
+:: Make sure to run the Machine-Specific Directory Script First...
+::-----------------------------------------------------------------
 
 :: Git
 mklink %UP%\.gitconfig %SYSTEMDRIVE%\etc\git\gitconfig
