@@ -29,7 +29,7 @@ if (WScript.Arguments.Length == 1)
 
     var app = new ActiveXObject("Shell.application")
     var SYSTEMDRIVE = Shell.ExpandEnvironmentStrings("%SYSTEMDRIVE%");
-    var application = SYSTEMDRIVE + "\\bin\\File\\WinMerge\\WinMergePortable.exe";
+    var application = SYSTEMDRIVE + "\\Tools\\PortableApps\\WinMergePortable\\WinMergePortable.exe";
   
     var arguments = "/u " + left + " " + right;  
 
