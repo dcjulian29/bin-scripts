@@ -1,4 +1,4 @@
-:: Am I elevated?
+setlocal
 
 WhoAmI /Groups | %WINDIR%\System32\find.exe "S-1-16-12288" >nul 2>nul
 
@@ -34,6 +34,8 @@ goto LOOP
 
 :AFTERLOOP
 
-call %SYSTEMDRIVE%\bin\elevate.bat %PARAM%
+call %SYSTEMDRIVE%\Tools\binaries\elevate.bat %PARAM%
 
 :EOF
+
+endlocal
