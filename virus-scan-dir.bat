@@ -2,7 +2,7 @@
 
 setlocal
 
-set BASE=%SYSTEMDRIVE%\bin\File\ClamWin
+set BASE=%SYSTEMDRIVE%\Tools\PortableApps\ClamWinPortable
 
 set CLAMSCAN=%BASE%\App\clamwin\bin\clamscan.exe
 set LOGFILE=%BASE%\Data\log\ClamScanLog.txt

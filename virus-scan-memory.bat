@@ -2,14 +2,14 @@
 
 setlocal
 
-set BASE=%SYSTEMDRIVE%\bin\File\ClamWin
+set BASE=%SYSTEMDRIVE%\Tools\PortableApps\ClamWinPortable
 
 set CLAMSCAN=%BASE%\App\clamwin\bin\clamscan.exe
 set LOGFILE=%BASE%\Data\log\ClamScanLog.txt
 set DATABASE=%BASE%\Data\db
 
 
-call %SYSTEMDRIVE%\bin\_isElevated.cmd NO "%0" %*
+call %SYSTEMDRIVE%\Tools\binaries\_isElevated.cmd NO "%0" %*
 if %ERRORLEVEL% EQU 99 goto ELEVATED
 
 goto EOF

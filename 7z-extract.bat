@@ -2,6 +2,6 @@
 
 setlocal
 
-call %SYSTEMDRIVE%\bin\7zip.cmd x %1
+call %SYSTEMDRIVE%\Tools\binaries\7zip.cmd x %1
 
 endlocal

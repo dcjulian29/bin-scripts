@@ -1,2 +1,2 @@
 @echo off
-%SystemRoot%\System32\cscript.exe %SystemDrive%\bin\scripts\elevate.js //Nologo %*
+%SYSTEMROOT%\System32\cscript.exe %SYSTEMDRIVE%\Tools\binaries\elevate.js //Nologo %*

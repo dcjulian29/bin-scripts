@@ -18,4 +18,4 @@ SET DDIR=%FNAME%.%FVER%.7z
 if [%SDIR%] NEQ [%ODIR%] popd
 if [%SDIR%] EQU [%CD%] pushd ..
 
-call %SYSTEMDRIVE%\bin\7zip.cmd a -t7z -mx9 -y -r  %DDIR% %SDIR%
+call %SYSTEMDRIVE%\Tools\binaries\7zip.cmd a -t7z -mx9 -y -r  %DDIR% %SDIR%

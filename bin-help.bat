@@ -1,1 +1,1 @@
-@dir C:\bin\*.bat /d /p 
+@dir %SYSTEMDRIVE%\Tools\binaries\*.bat /d /p 

@@ -2,7 +2,7 @@
 
 setlocal
 
-pushd %SYSTEMDRIVE%\bin\File\ClamWin\App\clamwin\bin
+pushd %SYSTEMDRIVE%\Tools\PortableApps\ClamWinPortable\App\clamwin\bin
 
 freshclam.exe --verbose
 

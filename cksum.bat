@@ -2,4 +2,6 @@
 setlocal
 SET CYGWIN=%CYGWIN% nodosfilewarning
 
-C:\cygwin\bin\cksum.exe %*
+%SYSTEMDRIVE%\cygwin\bin\cksum.exe %*
+
+endlocal

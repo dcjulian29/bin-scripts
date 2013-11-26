@@ -2,4 +2,4 @@
 setlocal
 SET CYGWIN=%CYGWIN% nodosfilewarning
 
-C:\cygwin\bin\dos2unix.exe %*
+%SYSTEMDRIVE%\cygwin\bin\dos2unix.exe %*
