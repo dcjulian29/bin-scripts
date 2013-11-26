@@ -1,1 +1,1 @@
-@C:\bin\file\WinMerge\WinMergePortable.exe %*
+@%SYSTEMDRIVE%\Tools\PortableApps\WinMergePortable\WinMergePortable.exe %*
