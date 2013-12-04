@@ -1,9 +1,7 @@
 @echo off
 setlocal
 
-set PSHELL=PowerShell -NoLogo -NonInteractive -Command
 set PCMD=Purge-Files -Folder "%TEMP%" -Filter "*.*" -Age 7
+call %~dp0pshell.cmd "%PCMD%"
 
-set PEXEC= %PSHELL% "%PCMD%"
-
-%PEXEC%
+endlocal

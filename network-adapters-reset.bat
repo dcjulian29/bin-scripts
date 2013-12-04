@@ -4,12 +4,9 @@ if %ERRORLEVEL% NEQ 99 goto EOF
 
 setlocal
 
-set PSHELL=PowerShell -NoLogo -NonInteractive -Command
 set PCMD=Reset-NetworkAdapters
 
-set PEXEC= %PSHELL% "%PCMD%"
-
-%PEXEC%
+call %~dp0pshell.cmd "%PCMD%"
 
 endlocal
 

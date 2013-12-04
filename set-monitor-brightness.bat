@@ -1,26 +1,29 @@
 @echo off
-setlocal
 
-IF NOT "%1" == "" GOTO C1
+if not "%1" == "" goto C1
 
-ECHO.
-ECHO Please provide a brightness percentage...
-ECHO.
+echo.
+echo Please provide a brightness percentage...
+echo.
 
-GOTO EOF
+goto EOF
 
 :C1
 
-call %SYSTEMDRIVE%\bin\_isElevated.cmd YES "%0" %*
+call %SYSTEMDRIVE%\Tools\binaries\_isElevated.cmd YES "%0" %*
 if %ERRORLEVEL% NEQ 99 goto EOF
 
-echo.
-echo Setting monitor brightness to %1%%
-
-SET PSHELL=PowerShell -NoLogo -NoProfile -NonInteractive -Command
-
-%PSHELL% ". C:\bin\WindowsPowerShell\GlobalScripts\10\Set-MonitorBrightness.ps1; Set-MonitorBrightness %1"
+setlocal
 
 echo.
+echo Setting monitor brightness to %1%%...
+
+set PCMD=Set-MonitorBrightness %1
+
+call %~dp0pshell.cmd "%PCMD%"
+
+echo.
+
+endlocal
 
 :EOF
