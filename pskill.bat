@@ -1,1 +1,1 @@
-@c:\bin\sysinternals\pskill.exe %*
+@%SYSTEMDRIVE%\Tools\apps\sysinternals\pskill.exe %*

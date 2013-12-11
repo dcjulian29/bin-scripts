@@ -1,1 +1,1 @@
-@c:\bin\sysinternals\sigcheck.exe %*
+@%SYSTEMDRIVE%\Tools\apps\sysinternals\sigcheck.exe %*

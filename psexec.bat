@@ -1,1 +1,1 @@
-@c:\bin\sysinternals\psexec.exe %*
+@%SYSTEMDRIVE%\Tools\apps\sysinternals\psexec.exe %*

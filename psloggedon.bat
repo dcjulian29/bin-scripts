@@ -1,1 +1,1 @@
-@c:\bin\sysinternals\psloggedon.exe %*
+@%SYSTEMDRIVE%\Tools\apps\sysinternals\psloggedon.exe %*

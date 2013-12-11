@@ -1,1 +1,1 @@
-@c:\bin\sysinternals\procdump.exe %*
+@%SYSTEMDRIVE%\Tools\apps\sysinternals\procdump.exe %*

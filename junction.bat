@@ -1,1 +1,1 @@
-@c:\bin\sysinternals\junction.exe %*
+@%SYSTEMDRIVE%\Tools\apps\sysinternals\junction.exe %*

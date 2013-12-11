@@ -1,1 +1,1 @@
-@c:\bin\sysinternals\psgetsid.exe %*
+@%SYSTEMDRIVE%\Tools\apps\sysinternals\psgetsid.exe %*

@@ -1,1 +1,1 @@
-@c:\bin\sysinternals\whois.exe %*
+@%SYSTEMDRIVE%\Tools\apps\sysinternals\whois.exe %*

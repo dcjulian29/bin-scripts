@@ -1,1 +1,1 @@
-@c:\bin\sysinternals\psservice.exe %*
+@%SYSTEMDRIVE%\Tools\apps\sysinternals\psservice.exe %*

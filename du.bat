@@ -1,1 +1,1 @@
-@c:\bin\sysinternals\du.exe %*
+@%SYSTEMDRIVE%\Tools\apps\sysinternals\du.exe %*

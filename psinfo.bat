@@ -1,1 +1,1 @@
-@c:\bin\sysinternals\psinfo.exe %*
+@%SYSTEMDRIVE%\Tools\apps\sysinternals\psinfo.exe %*

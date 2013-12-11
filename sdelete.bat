@@ -1,1 +1,1 @@
-@c:\bin\sysinternals\sdelete.exe %*
+@%SYSTEMDRIVE%\Tools\apps\sysinternals\sdelete.exe %*

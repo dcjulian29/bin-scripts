@@ -1,1 +1,1 @@
-@c:\bin\sysinternals\pslist.exe %*
+@%SYSTEMDRIVE%\Tools\apps\sysinternals\pslist.exe %*

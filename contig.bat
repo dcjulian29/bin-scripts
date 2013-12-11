@@ -1,1 +1,1 @@
-@%SYSTEMDRIVE%\Tools\binaries\sysinternals\contig.exe %*
+@%SYSTEMDRIVE%\Tools\apps\sysinternals\contig.exe %*
