@@ -1,3 +1,4 @@
 @echo off
 
-path %PATH%;%PF32%\nodejs
+if exist "%ProgramFiles%\nodejs" path %PATH%;%ProgramFiles%\nodejs
+if exist "%ProgramW6432%\nodejs" path %PATH%;%ProgramW6432%\nodejs
