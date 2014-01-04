@@ -8,8 +8,6 @@ set DEVPATH=%CD%
 
 popd
 
-path %DEVPATH%\git-tfs;%PATH%
-
 set PDIR=%ProgramFiles(x86)%
 if ["%PDIR%"] == [""] goto B32
 
@@ -21,5 +19,6 @@ set PDIR=%ProgramFiles%
 
 :CONT
 
-path %PDIR%\Git\bin;%PATH%
+if exist "%PDIR%\Git\bin" path %PDIR%\Git\bin;%PATH%
+if exist "%SYSTEMDRIVE%\tools\apps\gittfs" path %SYSTEMDRIVE%\tools\apps\gittfs;%PATH%
 path %DEVPATH%;%PATH%
