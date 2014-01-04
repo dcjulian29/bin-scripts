@@ -1,1 +1,1 @@
-@%SYSTEMDRIVE%\Tools\development\AutoHotkey\AutoHotkey.exe %*
+@%SYSTEMDRIVE%\Tools\apps\autohotkey\AutoHotkey.exe %*

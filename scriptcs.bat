@@ -1,7 +1,9 @@
-@ECHO OFF
+@echo off
 
-SETLOCAL
+setlocal
 
-SET PATH=%SYSTEMDRIVE%\bin\ScriptCS;%PATH%
+set PATH=%CHOCOLATEYINSTALL%\apps\scriptcs;%PATH%
 
 scriptcs.exe %*
+
+endlocal
