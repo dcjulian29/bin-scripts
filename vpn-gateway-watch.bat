@@ -4,6 +4,8 @@ if %ERRORLEVEL% NEQ 99 goto EOF
 
 setlocal
 
+color 60
+
 set PCMD=Watch-DefaultGatewayChangeVpn OpenVPN
 
 call %~dp0pshell.cmd "%PCMD%"
