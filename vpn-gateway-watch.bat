@@ -5,6 +5,7 @@ if %ERRORLEVEL% NEQ 99 goto EOF
 setlocal
 
 color 60
+title VPN-Gateway-Watch
 
 set PCMD=Watch-DefaultGatewayChangeVpn OpenVPN
 
