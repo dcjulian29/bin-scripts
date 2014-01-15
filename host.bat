@@ -1,7 +1,9 @@
-@ECHO OFF
+@echo off
 
-SETLOCAL
+setlocal
 
-SET PATH=C:\bin\network\dig;%PATH%
+set PATH=%SYSTEMDRIVE%\Tools\apps\bind-tools;%PATH%
 
 host.exe %*
+
+endlocal

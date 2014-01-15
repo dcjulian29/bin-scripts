@@ -2,7 +2,7 @@
 
 setlocal
 
-set PATH=%SYSTEMDRIVE%\Tools\binaries\network\dig;%PATH%
+set PATH=%SYSTEMDRIVE%\Tools\apps\bind-tools;%PATH%
 
 dig.exe %*
 

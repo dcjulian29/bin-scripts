@@ -1,7 +1,9 @@
 @echo off
 setlocal
 
-path %~dp0gpg;%path%
+
+if exist "C:\Program Files\GNU\GnuPG" path C:\Program Files\GNU\GnuPG;%path%
+if exist "C:\Program Files (x86)\GNU\GnuPG" path C:\Program Files (x86)\GNU\GnuPG;%path%
 
 gpg2.exe --verbose %*
 
