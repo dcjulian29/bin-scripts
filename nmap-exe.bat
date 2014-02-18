@@ -2,7 +2,7 @@
 
 setlocal
 
-set PATH=C:\Tools\binaries\network\nmap;%PATH%
+set PATH=C:\Tools\apps\nmap;%PATH%
 
 if [%1] == [] goto EXE
 
