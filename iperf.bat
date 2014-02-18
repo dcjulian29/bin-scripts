@@ -1,5 +1,1 @@
-@ECHO OFF
-
-SETLOCAL
-
-C:\bin\network\jperf\bin\iperf.exe %*
+@%SYSTEMDRIVE%\tools\apps\jperf\bin\iperf.exe %*
