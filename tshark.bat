@@ -1,1 +1,1 @@
-@c:\bin\Network\Wireshark\App\Wireshark\tshark.exe %*
+@"%SYSTEMDRIVE%\Program Files\Wireshark\tshark.exe" %*
