@@ -1,1 +1,1 @@
-@c:\bin\Network\Wireshark\App\Wireshark\tshark.exe -D
+@%~dp0tshark.bat -D

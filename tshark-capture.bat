@@ -20,4 +20,4 @@ goto LOOP
 
 :AFTERLOOP
 
-c:\bin\Network\Wireshark\App\Wireshark\tshark.exe -i %I% -f %F% -w %W% -b filesize:100000 -b files:5 -N mt %PARAMS%
+call %~dp0tshark.bat -i %I% -f %F% -w %W% -b filesize:100000 -b files:5 -N mt %PARAMS%
