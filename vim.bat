@@ -1,1 +1,1 @@
-@%SYSTEMDRIVE%\bin\np.bat %*
+@%~dp0np.bat %*
