@@ -2,7 +2,7 @@
 
 setlocal
 
-call %SYSTEMDRIVE%\bin\path-java.bat
+call %SYSTEMDRIVE%\tools\binaries\path-java.bat
 
 javaw.exe %*
 
