@@ -34,6 +34,9 @@ for /f "usebackq delims=" %%O in (`dir /b /ad %SYSTEMDRIVE%\home`) do (
     )
 )
 
+echo %EXECUTOR%\executor.ini --^> %USERPROFILE%\dropbox\executor-fei\executor.ini
+copy /V %EXECUTOR%\executor.ini %USERPROFILE%\dropbox\executor-fei\executor.ini
+
 
 :EOF
 

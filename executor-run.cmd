@@ -4,6 +4,7 @@ setlocal
 
 set EXSRC=%SYSTEMDRIVE%\Tools\apps\executor
 set EXETC=%SYSTEMDRIVE%\etc\executor
+set EXFEI=%USERPROFILE%\dropbox\executor-fei\executor.ini
 set EXDST=%TEMP%\executor
 
 if exist %EXDST% (
@@ -24,6 +25,7 @@ if exist %EXDST% (
 mkdir %EXDST%
 
 copy %EXSRC%\executor.exe %EXDST% >nul
+if [%COMPUTERNAME%] == [JEASTERLINGPC] if exist %EXFEI% move %EXEFEI% %EXETC%\executor.ini
 copy %EXETC%\executor.ini %EXDST% >nul
 copy %EXSRC%\defaulticon.ico %EXDST% >nul
 copy %EXSRC%\hookwinr.dll %EXDST% >nul
