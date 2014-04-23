@@ -12,6 +12,8 @@ echo.
 echo Run this script only on %1
 echo.
 
+pause
+
 goto EOF
 
 :CORRECTHOST
@@ -24,6 +26,8 @@ echo.
 echo Source Directory does not exist...
 echo.
 
+pause
+
 goto EOF
 
 :SRCEXIST
@@ -33,6 +37,8 @@ if exist %3 goto DSTEXIST
 echo.
 echo Destination Directory does not exist...
 echo.
+
+pause
 
 goto EOF
 
