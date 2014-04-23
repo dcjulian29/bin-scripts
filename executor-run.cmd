@@ -25,7 +25,7 @@ if exist %EXDST% (
 mkdir %EXDST%
 
 copy %EXSRC%\executor.exe %EXDST% >nul
-if [%COMPUTERNAME%] == [JEASTERLINGPC] if exist %EXFEI% move %EXEFEI% %EXETC%\executor.ini
+if [%COMPUTERNAME%] == [JEASTERLINGPC] if exist %EXFEI% move %EXFEI% %EXETC%\executor.ini
 copy %EXETC%\executor.ini %EXDST% >nul
 copy %EXSRC%\defaulticon.ico %EXDST% >nul
 copy %EXSRC%\hookwinr.dll %EXDST% >nul
