@@ -1,1 +1,1 @@
-@%~dp0np.bat %*
+@%~dp0vi.bat %*
