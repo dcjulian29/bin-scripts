@@ -5,6 +5,7 @@ setlocal
 set EXSRC=%SYSTEMDRIVE%\Tools\apps\executor
 set EXETC=%SYSTEMDRIVE%\etc\executor
 set EXFEI=%USERPROFILE%\dropbox\executor-fei\executor.ini
+set EXDEV=%USERPROFILE%\dropbox\executor-dev
 set EXDST=%TEMP%\executor
 
 if exist %EXDST% (
@@ -24,12 +25,26 @@ if exist %EXDST% (
 
 mkdir %EXDST%
 
+if [%COMPUTERNAME%] == [JEASTERLINGPC2] if exist %EXFEI% move %EXFEI% %EXETC%\executor.ini
+
+if [%COMPUTERNAME%] == [TOWERDEV] (
+    copy /Y %EXDEV%\executor.ini %EXDST% >nul
+    copy /Y %EXDEV%\*.wav %EXDST% >nul
+)
+
+if [%COMPUTERNAME%] == [LAPTOPDEV] (
+    copy /Y %EXDEV%\executor.ini %EXDST% >nul
+    copy /Y %EXDEV%\*.wav %EXDST% >nul
+)
+
+if exist %EXETC%\executor.ini (
+    copy /Y %EXETC%\executor.ini %EXDST% >nul
+    copy /Y %EXETC%\*.wav %EXDST% >nul
+)
+
 copy %EXSRC%\executor.exe %EXDST% >nul
-if [%COMPUTERNAME%] == [JEASTERLINGPC] if exist %EXFEI% move %EXFEI% %EXETC%\executor.ini
-copy %EXETC%\executor.ini %EXDST% >nul
 copy %EXSRC%\defaulticon.ico %EXDST% >nul
 copy %EXSRC%\hookwinr.dll %EXDST% >nul
-copy %EXETC%\*.wav %EXDST% >nul
 
 mkdir %EXDST%\skins
 copy %EXSRC%\skins\*.* %EXDST%\skins >nul
