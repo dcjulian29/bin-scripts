@@ -19,9 +19,23 @@ if not exist %CYGSETUPROOT% mkdir %SYSTEMDRIVE%\cygwin\setup
 
 pushd %CYGSETUPROOT%
 
-call %~dp0pshell.cmd "(New-Object System.Net.WebClient).DownloadFile('http://cygwin.com/setup-x86.exe','.\setup-x86.exe')"
+wmic os get osarchitecture | find /I "64-Bit" >nul
 
-setup-x86.exe --root "%CYGROOT%" --no-shortcuts --site http://mirrors.kernel.org/sourceware/cygwin --quiet-mode
+if exist setup.exe del setup.exe
+
+if %ERRORLEVEL% == 0 goto BITS64
+
+call %SYSTEMDRIVE%\Tools\binaries\pshell.cmd "(New-Object System.Net.WebClient).DownloadFile('http://cygwin.com/setup-x86.exe','.\setup.exe')"
+
+goto EXECUTE
+
+:BITS64
+
+call %SYSTEMDRIVE%\Tools\binaries\pshell.cmd "(New-Object System.Net.WebClient).DownloadFile('http://cygwin.com/setup-x86_64.exe','.\setup.exe')"
+
+:EXECUTE
+
+setup.exe --root "%CYGROOT%" --no-shortcuts --site http://mirrors.kernel.org/sourceware/cygwin --quiet-mode
 
 popd
 

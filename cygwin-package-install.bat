@@ -12,11 +12,9 @@ goto EOF
 
 set CYGROOT=%SYSTEMDRIVE%\cygwin
 set CYGSETUPROOT=%CYGROOT%\setup
-set CYGSETUP=%CYGSETUPROOT%\setup-x86.exe
+set CYGSETUP=%CYGSETUPROOT%\setup.exe
 
-if exist "%CYGSETUPROOT%\setup-x64.exe" set CYGSETUP=%CYGSETUPROOT%\setup-x64.exe
-
-if exist "%CYGSETUP%" goto :INSTALL
+if exist "%CYGSETUP%" goto INSTALL
 
 echo.
 echo Looking in %CYGSETUPROOT% didn't find the setup program. Is Cygwin installed via my Chocolatey package?
