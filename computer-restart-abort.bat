@@ -1,0 +1,1 @@
+@call %~dp0psshutdown.bat -a
