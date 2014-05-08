@@ -4,8 +4,7 @@ setlocal
 
 set EXSRC=%SYSTEMDRIVE%\Tools\apps\executor
 set EXETC=%SYSTEMDRIVE%\etc\executor
-set EXFEI=%USERPROFILE%\dropbox\executor-fei\executor.ini
-set EXDEV=%USERPROFILE%\dropbox\executor-dev
+set EXDRP=%USERPROFILE%\dropbox\executor
 set EXDST=%TEMP%\executor
 
 if exist %EXDST% (
@@ -25,16 +24,19 @@ if exist %EXDST% (
 
 mkdir %EXDST%
 
-if [%COMPUTERNAME%] == [JEASTERLINGPC2] if exist %EXFEI% move %EXFEI% %EXETC%\executor.ini
+if [%COMPUTERNAME%] == [JEASTERLINGPC2] (
+    copy /Y %EXDRP%\executor.ini %EXDST% >nul
+    copy /Y %EXDRP%\*.wav %EXDST% >nul
+)
 
 if [%COMPUTERNAME%] == [TOWERDEV] (
-    copy /Y %EXDEV%\executor.ini %EXDST% >nul
-    copy /Y %EXDEV%\*.wav %EXDST% >nul
+    copy /Y %EXDRP%\executor.ini %EXDST% >nul
+    copy /Y %EXDRP%\*.wav %EXDST% >nul
 )
 
 if [%COMPUTERNAME%] == [LAPTOPDEV] (
-    copy /Y %EXDEV%\executor.ini %EXDST% >nul
-    copy /Y %EXDEV%\*.wav %EXDST% >nul
+    copy /Y %EXDRP%\executor.ini %EXDST% >nul
+    copy /Y %EXDRP%\*.wav %EXDST% >nul
 )
 
 if exist %EXETC%\executor.ini (
