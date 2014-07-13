@@ -6,7 +6,7 @@ if [%1] == [] goto PROVIDESRC
 
 set SRC=%1
 
-set DST=D:\Videos\_download
+set DST=%USERPROFILE%\Videos\
 
 if [%2] == [] goto STARTDOWNLOAD
 
@@ -14,7 +14,7 @@ set DST=%2
 
 :STARTDOWNLOAD
 
-%SystemDrive%\bin\network\wget\wget.exe "%SRC%" -P "%dst%" --continue --tries=10 --restrict-file-names=windows
+call %~dp0wget.bat "%SRC%" -P "%DST%" --continue --tries=10 --restrict-file-names=windows
 
 goto EOF
 
