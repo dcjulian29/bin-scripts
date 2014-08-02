@@ -5,3 +5,5 @@ set PATH=%WINDIR%;%WINDIR%\system32;%WINDIR%\System32\Wbem;%WINDIR%\System32\Win
 if exist "%SYSTEMDRIVE%\tools\binaries" set PATH=%SYSTEMDRIVE%\tools\binaries;%PATH%
 
 setx /m PATH %PATH%
+
+reg delete HKCU\Environment /v Path /f
