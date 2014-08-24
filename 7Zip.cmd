@@ -1,1 +1,1 @@
-@%SYSTEMDRIVE%\Tools\PortableApps\7-ZipPortable\App\7-Zip\7z.exe %*
+@"%SYSTEMDRIVE%\Program Files\7-Zip\7z.exe" %*
