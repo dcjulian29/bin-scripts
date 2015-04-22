@@ -1,1 +1,1 @@
-@call %~dp0psshutdown.bat -a
+@psshutdown.exe -a
