@@ -2,7 +2,12 @@
 
 setlocal
 
+set PATH=C:\Tools\apps\nmap;%PATH%
+
 if [%1] == [] goto EXE
+
+echo [%*] | find "--unprivileged" > nul
+If %ERRORLEVEL% EQU 0 goto EXE
 
 call %SYSTEMDRIVE%\Tools\binaries\_isElevated.cmd YES "%0" %*
 if %ERRORLEVEL% EQU 99 goto PRIVILEGED
@@ -12,16 +17,16 @@ goto EOF
 
 :UNPRIVILEGED
 
-call %SYSTEMDRIVE%\Tools\binaries\nmap-exe.bat --unprivileged -vv -n -Pn -sT -sV %*
+nmap.exe --unprivileged %*
 
 goto EOF
 
 :PRIVILEGED
 
-call %SYSTEMDRIVE%\Tools\binaries\nmap-exe.bat --privileged -vv -n -Pn -sS -sV -A %*
-goto EOF
-
 :EXE
-call %SYSTEMDRIVE%\Tools\binaries\nmap-exe.bat 
+
+nmap.exe %*
+
+pause
 
 :EOF
