@@ -1,1 +1,0 @@
-@%~dp0tshark.bat -D
